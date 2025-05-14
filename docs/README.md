@@ -41,61 +41,61 @@ Most ID apps rely on static filters, cloud lookups, or opaque machine learning. 
 - **Multi-step Identification Flow**  
   Narrows species via compound user input: country → dorsal color → head/nape markings → ventral color/pattern. Results are scored using a custom (private) algorithm.
 
-![Begin ID – Country & Primary Color](screenshots/IdSnake1.png)  
+![Begin ID – Country & Primary Color](/screenshots/IdSnake1.png)  
 *Step 1 of multi-input filtering: user selects observed region and dominant color.*
 
-![Color Filter Filled](screenshots/IdSnake2.png)  
+![Color Filter Filled](/screenshots/IdSnake2.png)  
 *Search box supports fuzzy country input.*
 
-![Secondary Color Selection](screenshots/IdSnake3.png)  
+![Secondary Color Selection](/screenshots/IdSnake3.png)  
 *Allows for additional visible colors to refine results.*
 
-![Head & Nape Traits](screenshots/IdSnake4.png)  
+![Head & Nape Traits](/screenshots/IdSnake4.png)  
 *User can toggle visual markings on the head and nape area.*
 
-![Pattern Selection](screenshots/IdSnake5.png)  
+![Pattern Selection](/screenshots/IdSnake5.png)  
 *Uses visual references for intuitive selection.*
 
-![Ventral Color & Pattern](screenshots/IdSnake6.png)  
+![Ventral Color & Pattern](/screenshots/IdSnake6.png)  
 *Last step before species match: underside colors and patterns.*
 
-![Species Results](screenshots/Results.png)  
+![Species Results](/screenshots/Results.png)  
 *Species narrowed using a scoring algorithm (private).*
 
-![Result Selection Toast](screenshots/AddedToMySnakes.png)  
+![Result Selection Toast](/screenshots/AddedToMySnakes.png)  
 *Confirmation after saving a match.*
 
 - **Snake of the Day**  
   Randomly displays a species at launch, using local fallback if no image is available.
 
-![Home Screen](screenshots/HomeScreenRefactor.png)  
+![Home Screen](/screenshots/HomeScreenRefactor.png)  
 *Randomly featured species with offline fallback logic.*
 
 - **Explore All**  
   Infinite-scroll list of all available species, pulled from Room with adapter caching.
 
-![Explore All View](screenshots/ExploreAllRefactor.png)  
+![Explore All View](/screenshots/ExploreAllRefactor.png)  
 *Scroll through all indexed species without filters.*
 
 - **Information-Rich Detail View**  
   ViewPager2-powered image carousels with dynamic per-image attribution. Page populates with detailed information about the selected snake.
 
-![DetailView – Part 1](screenshots/DetailView1Refactor.png)  
+![DetailView – Part 1](/screenshots/DetailView1Refactor.png)  
 *Offline-accessible profile includes image, safety warning, and name data.*
 
-![DetailView – Part 2](screenshots/DetailView2Refactor.png)  
+![DetailView – Part 2](/screenshots/DetailView2Refactor.png)  
 *Country list, possible patterns, ventral traits, and placeholder map.*
 
-![DetailView – Part 3](screenshots/DetailView3Refactor.png)  
+![DetailView – Part 3](/screenshots/DetailView3Refactor.png)  
 *Source attribution with license notes (iNaturalist, CC-compliant).*
 
-![DetailView – Venomous Species](screenshots/DetailViewVenomousRefactor.png)  
+![DetailView – Venomous Species](/screenshots/DetailViewVenomousRefactor.png)  
 *Header and text formatting reflect venom status.*
 
 - **Favorites (“My Snakes”)**  
   Users can save any snake they’ve ID’d. Entries are deduplicated and stored via SharedPreferences. The app checks for updates onResume to keep the UI in sync.
 
-![Saved Snakes List](screenshots/MySnakesList.png)  
+![Saved Snakes List](/screenshots/MySnakesList.png)  
 *User-selected favorites stored locally.*
 
 ---
