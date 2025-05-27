@@ -1,93 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ophidia – Snake ID App</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header>
-        <div class="banner">
-            <img src="assets/logo_o.jpg" alt="Ophidia logo" class="logo" />
-            <div class="banner-text">
-                <h1>Ophidia</h1>
-                <h3>A field-ready offline snake ID app for researchers, conservationists, and reptile enthusiasts</h3>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ophidia – Snake ID App</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <img src="assets/logo_o.jpg" alt="Ophidia logo" class="logo" />
+                <div class="banner-text">
+                    <h1>Ophidia</h1>
+                    <h3>A field-ready offline snake ID app for researchers, conservationists, and reptile enthusiasts</h3>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <div class="walkthrough">
+                <h2>Take a Tour of the App</h2>
+                <div class="slideshow card">
+                    <video id="slideVideo" autoplay muted loop playsinline style="max-width: 100%; opacity: 1; transition: opacity 0.3s ease;"></video>
+                    <p id="slideCaption"></p>
+                    <p id="slideCounter" class="slide-counter"></p>
+                    <div class="slideshow-controls">
+                        <button id="prevSlide"> ← </button>
+                        <button id="nextSlide"> → </button>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about-left">
+                    <section id="about">
+                    <h2>About This Project</h2>
+                    <p>Ophidia began as a portfolio project and developed into a six-month collaboration with Dr. Peter Uetz, curator of the Reptile Database, and researcher Dan Durback. I was brought on to design a mobile app that could identify snakes using observable traits - something researchers, conservationists, and field crews could actually use offline.</p>
+                    <p>What started as a simple filter evolved into a working prototype that currently handles over 600 species. Every part of it, from the database schema to the interface, was built from scratch with field usability in mind.</p>
+                    </section>
+                </div>
+
+                <div class="about-right">
+                    <section id="features">
+                    <h2>Core Features</h2>
+                        <ul>
+                            <li>Offline-first architecture – no signal required</li>
+                            <li>600+ species and counting</li>
+                            <li>Dynamic multi-step ID filtering</li>
+                            <li>Swipeable image galleries with attribution</li>
+                            <li>Favorites list stored locally</li>
+                        </ul>
+                    </section>
+
+                    <section id="future">
+                    <h2>Planned Future Development</h2>
+                        <ul>
+                            <li>Support for additional snake species</li>
+                            <li>Refinements to the scoring algorithm based on testing feedback from both the scientific community and general enthusiasts</li>
+                            <li>Data packaging to support species across global regions</li>
+                            <li>Map graphics reflecting real world geographic observation data</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="repo-button-container">
+                <button class="repo-button" a href="link to repo">Check out the Repository on GitHub</button>
             </div>
         </div>
-    </header>
 
-    <section class="grid-layout">
-        <div class="walkthrough">
-            <h2>Visual Walkthrough</h2>
-            <div class="slideshow card">
-            <img id="slideImage" src="screenshots/HomeScreen.png" alt="Home Screen" />
-            <p id="slideCaption">Randomly featured species generated when home screen loads. User can tap to learn more.</p>
-            <div class="slideshow-controls">
-                <button id="prevSlide">← Prev</button>
-                <button id="nextSlide">Next →</button>
-            </div>
-            </div>
+    <footer id="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Cryptid. All Rights Reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Built by one.</p>
+            <img src="assets/cryptid_icon.gif">
+            <p><span class="footer-tagline"> Work clean. Stay strange.</span></p>
+            <p>|&nbsp;&nbsp;&nbsp;Email: <a href="mailto:cryptidwebdev@gmail.com">cryptidwebdev@gmail.com</a></p>
         </div>
+    </footer>
 
-        <div class="about">
-            <section id="about">
-            <h2>About This Project</h2>
-            <p>Ophidia began as a portfolio project and developed into a six-month collaboration with Dr. Peter Uetz, curator of the Reptile Database, and researcher Dan Durback. I was brought on to design a mobile app that could identify snakes using observable traits - something researchers, conservationists, and field crews could actually use offline.</p>
-            <p>What started as a simple filter evolved into a working prototype that currently handles over 600 species. Every part of it, from the database schema to the interface, was built from scratch with field usability in mind.</p>
-            </section>
+        <script src="script.js"></script>
 
-            <section id="features">
-            <h2>Core Features</h2>
-            <ul>
-                <li>Offline-first architecture – no signal required</li>
-                <li>600+ species and counting</li>
-                <li>Dynamic multi-step ID filtering</li>
-                <li>Swipeable image galleries with attribution</li>
-                <li>Favorites list stored locally</li>
-            </ul>
-            </section>
-        </div>
-    </section>
-
-
-    <section id="demo-toggle" class="demo-toggle">
-        <h2>Learn More about the Snake ID Filter</h2>
-        <button id="toggleDemo">Show ID Flow Explanation</button>
-        <div id="demoBox" class="hidden demo-grid">
-            <div class="demo-pair">
-                <img src="screenshots/IdSnake1.png" alt="Country Selection Step" />
-                <p><strong>Step 1:</strong> Select observed country and most prominant dorsal color.</p>
-            </div>
-            <div class="demo-pair">
-                <img src="screenshots/IdSnake3.png" alt="Pattern Selection Step" />
-                <p><strong>Step 2:</strong> Select the next most prominent dorsal color. Options filter based on primary color selected.</p>
-             </div>
-            <div class="demo-pair">
-                <img src="screenshots/IdSnake4.png" alt="Ventral Input Step" />
-                <p><strong>Step 3:</strong> Mark head and nape traits.</p>
-            </div>
-            <div class="demo-pair">
-                <img src="screenshots/IdSnake5.png" alt="Ventral Input Step" />
-                <p><strong>Step 4:</strong> Choose the pattern that most closely matches observation. Multi-select is possible if unsure.</p>
-            </div>
-            <div class="demo-pair">
-                <img src="screenshots/IdSnake6.png" alt="Ventral Input Step" />
-                <p><strong>Step 5:</strong> Choose ventral color and pattern.</p>
-            </div>
-            <div class="demo-pair">
-                <img src="screenshots/Results.png" alt="Ventral Input Step" />
-                <p><strong>Results:</strong> The algorithm determines the most likely snake species based on recorded observations. Users can scroll through returned results and select the species that most closely matches what they observed.</p>
-            </div>
-        </div>
-    </section>
-
-<footer>
-    <p>Developed by Aiden Montoro (Cryptid)<img src="assets/cryptid_icon.gif" alt="Cryptid icon" class="footer-icon"/></p>
-    <p>Email: <a href="mailto:cryptidwebdev@gmail.com">cryptidwebdev@gmail.com</a></p>
-</footer>
-
-
-</body>
+    </body>
 </html>
