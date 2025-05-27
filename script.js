@@ -3,42 +3,57 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Slideshow logic
   const slides = [
+    //first slide
     {
-      src: "screenshots/HomeScreen.png",
-      caption: "Randomly featured species generated when home screen loads. User can tap to learn more.",
+      src: "screenshots/webm/LaunchtoTabNavTour.webm",
+      caption: "From launch, the app opens on the snake identification interface. Navigation is intuitive with tap icons at the top of the screen.",
     },
     {
-      src: "screenshots/IdSnake1.png",
-      caption: "Fully interactive snake ID interface based on human-observable traits.",
+      src: "screenshots/webm/SnakeIDSequenceFull.webm",
+      caption: "Fully interactive snake ID interface based on human-observable traits. Filtered match results are generated based on user input and an internal scoring algorithm.",
     },
     {
-      src: "screenshots/Results.png",
-      caption: "Filtered match results based on user input and internal scoring algorithm.",
+      src: "screenshots/webm/MySnakestoSnakeDetailView.webm",
+      caption: "Confirmed snakes are saved to My Snakes, which is an interactive list that persists across sessions. Users can then click on a saved snake to learn more.",
     },
     {
-      src: "screenshots/DetailView1Refactor.png",
-      caption: "Informative and digestible species detail view with offline-accessible images and metadata.",
+      src: "screenshots/webm/ExploreAll.webm",
+      caption: "Explore All allows users to scroll through all snakes in the database, allowing them to click each snake to learn more. Venomous snakes are highlighted in red.",
     },
     {
-      src: "screenshots/ExploreAll.png",
-      caption: "Infinity scroll interface providing access to information about all snakes in the database.",
+      src: "screenshots/webm/HomeScreen.webm",
+      caption: "The Home screen serves as a landing pad, inviting the user to learn more about a randomly featured snake, and also allowing them to access the snake ID interface at the press of a button.",
     },
-    {
-      src: "screenshots/MySnakesList.png",
-      caption: "Users can save identified snakes to a favorites list that persists across sessions.",
-    },
+
   ];
 
   let currentSlide = 0;
-  const slideImage = document.getElementById("slideImage");
+  const slideContainer = document.getElementById("slideMediaContainer");
   const slideCaption = document.getElementById("slideCaption");
   const prevBtn = document.getElementById("prevSlide");
   const nextBtn = document.getElementById("nextSlide");
 
   function updateSlide(index) {
-    slideImage.src = slides[index].src;
-    slideCaption.textContent = slides[index].caption;
+    const video = document.getElementById("slideVideo");
+    const caption = document.getElementById("slideCaption");
+
+    // Fade out
+    video.style.opacity = 0;
+
+    setTimeout(() => {
+      video.src = slides[index].src;
+      caption.textContent = slides[index].caption;
+      video.load();
+      video.play();
+
+      // Fade back in
+      video.style.opacity = 1;
+    }, 150);
+
+    document.getElementById("slideCounter").textContent = `${index + 1} of ${slides.length}`;
+
   }
+
 
   prevBtn.addEventListener("click", () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
@@ -50,20 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlide(currentSlide);
   });
 
-
-  const toggleButton = document.getElementById("toggleDemo");
-  const demoBox = document.getElementById("demoBox");
-
-  if (toggleButton && demoBox) {
-    toggleButton.addEventListener("click", () => {
-        console.log("Toggling demo box");
-
-      const isHidden = demoBox.classList.contains("hidden");
-      demoBox.classList.toggle("hidden");
-
-      toggleButton.innerText = isHidden
-        ? "Hide ID Flow Explanation"
-        : "Show ID Flow Explanation";
-    });
-  }
+  // Initialize first slide
+  updateSlide(currentSlide);
 });
