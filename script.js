@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       caption: "From launch, the app opens on the snake identification interface. Navigation is intuitive with tap icons at the top of the screen.",
     },
     {
-      src: "screenshots/webm/SnakeIDSequenceFull.webm",
+      src: "screenshots/webm/SnakeIDSequenceSmall.webm",
       caption: "Fully interactive snake ID interface based on human-observable traits. Filtered match results are generated based on user input and an internal scoring algorithm.",
     },
     {
