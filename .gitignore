@@ -1,0 +1,43 @@
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore Python cache files (in case you ran scripts)
+__pycache__/
+*.py[cod]
+
+# Ignore Node modules if used for any reason
+node_modules/
+
+# Ignore environment/config files
+.env
+*.log
+
+# Ignore backup files
+*.bak
+*.swp
+
+# Ignore full-size version of webm video
+screenshots/webm/SnakeIDSequenceFull.webm
+
+# Allow all other webm files
+!screenshots/webm/*.webm
+
+# Ignore compiled executables or binaries
+*.exe
+*.out
+*.app
+*.apk
+
+# VS Code settings
+.vscode/
+
+# macOS metadata
+*.DS_Store
+
+# Windows thumbnails
+ehthumbs.db
+
+# Git temp files
+*.orig
